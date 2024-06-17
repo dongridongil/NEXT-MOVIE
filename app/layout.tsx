@@ -1,4 +1,4 @@
-// app/layout.tsx
+import '../styles/global.css';
 import { ReactNode } from 'react';
 import Navigation from '../components/navigation';
 
