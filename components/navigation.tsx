@@ -10,11 +10,11 @@ export default function Navigation() {
         <nav className={styles.nav}>
             <ul className={styles.list}>
                 <li>
-                    <Link href="/">Home</Link> {path === '/' ? '🔥' : ''}
+                    <Link href="/">MOVIE</Link> {path === '/' ? '🔥' : ''}
                 </li>
                 <li>
-                    <Link href="/about-us">About Us</Link>
-                    {path === '/about-us' ? '🔥' : ''}
+                    <Link href="/series">SERIES</Link>
+                    {path === '/series' ? '🔥' : ''}
                 </li>
             </ul>
         </nav>

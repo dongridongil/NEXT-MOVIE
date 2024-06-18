@@ -10,26 +10,26 @@ import 'swiper/css/navigation';
 SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 
 import Link from 'next/link';
-import styles from '../styles/movie.module.css';
+import styles from '../styles/series.module.css';
 import { useRouter } from 'next/navigation';
 import { makeImagePath } from '../app/constants';
 
-interface IMovie {
+interface ISeries {
     id: string;
-    title: string;
+    name: string;
     poster_path: string;
     backdrop_path: string;
-    release_date: string;
+    first_air_date: string;
     overview: string;
 }
-
-interface IMovieProps {
-    movies: IMovie[];
+interface ISeriesProps {
+    series: ISeries[];
 }
-const Movie = ({ movies }: IMovieProps) => {
+
+const Series = ({ series }: ISeriesProps) => {
     const router = useRouter();
     const onClick = (id: string) => {
-        router.push(`/movies/${id}`);
+        router.push(`/series/${id}`);
     };
 
     return (
@@ -52,17 +52,17 @@ const Movie = ({ movies }: IMovieProps) => {
                     slideShadows: true, // 슬라이드 그림자
                 }}
             >
-                {movies.map((movie) => (
-                    <SwiperSlide className={styles.swiperContainer} key={movie.id}>
+                {series.map((tv) => (
+                    <SwiperSlide className={styles.swiperContainer} key={tv.id}>
                         <img
                             className={styles.poster}
-                            src={makeImagePath(movie.backdrop_path)}
-                            alt={movie.title}
-                            onClick={() => onClick(movie.id)}
+                            src={makeImagePath(tv.backdrop_path)}
+                            alt={tv.name}
+                            onClick={() => onClick(tv.id)}
                         />
-                        <h2 className={styles.h2}>{movie.title}</h2>
-                        <p className={styles.release}>개봉일 : {movie.release_date}</p>
-                        <Link prefetch href={`/movies/${movie.id}`}></Link>
+                        <h2 className={styles.h2}>{tv.name}</h2>
+                        <p className={styles.release}>첫 방송 : {tv.first_air_date}</p>
+                        <Link prefetch href={`/tvs/${tv.id}`}></Link>
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -70,4 +70,4 @@ const Movie = ({ movies }: IMovieProps) => {
     );
 };
 
-export default Movie;
+export default Series;

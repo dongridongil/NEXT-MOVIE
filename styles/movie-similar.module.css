@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    overflow-x: auto;
+}
+.link {
+    color: rgb(178, 177, 177);
+}
+.link:hover {
+    color: white;
+}
+.poster {
+    border-radius: 10px;
+    border: 1px solid gray;
+    width: 400px;
+    height: 600px;
+    gap: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.poster:hover {
+    opacity: 0.8;
+}
+.swiperContainer {
+    width: 100%;
+    padding: 20px;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+
+    width: 100%;
+    max-width: 100%;
+    z-index: 1000;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 999;
+}
