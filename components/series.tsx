@@ -3,11 +3,11 @@
 //swiper 라이브러리
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
-import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+import { Navigation, Pagination, EffectCoverflow ,Autoplay  } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
+SwiperCore.use([Navigation, Pagination, EffectCoverflow ,Autoplay]);
 
 import Link from 'next/link';
 import styles from '../styles/series.module.css';
@@ -50,6 +50,10 @@ const Series = ({ series }: ISeriesProps) => {
                     depth: 200, // 입체 효과의 깊이
                     modifier: 1.5, // 슬라이드 사이의 거리
                     slideShadows: true, // 슬라이드 그림자
+                }}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
                 }}
             >
                 {series.map((tv) => (

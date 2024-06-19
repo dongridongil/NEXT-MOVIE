@@ -6,6 +6,7 @@
     align-items: flex-start;
     width: 100%;
     overflow-x: auto;
+    border: 3px solid red;
 }
 .link {
     color: rgb(178, 177, 177);
@@ -13,43 +14,40 @@
 .link:hover {
     color: white;
 }
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 .poster {
     border-radius: 10px;
     border: 1px solid gray;
-    width: 400px;
-    height: 600px;
+    width: 200px;
+    height: 300px;
     gap: 20px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    position: relative;
 }
 .poster:hover {
-    opacity: 0.8;
+    opacity: 0.4;
 }
 .swiperContainer {
     width: 100%;
     padding: 20px;
 }
 
-.modal {
+.poster + h2 {
+    display: none;
     position: absolute;
-    top: 50%;
+    top: 10px;
     left: 50%;
-    right: auto;
-    bottom: auto;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-
-    width: 100%;
-    max-width: 100%;
-    z-index: 1000;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 999;
+
+.poster:hover + h2 {
+    display: block;
 }

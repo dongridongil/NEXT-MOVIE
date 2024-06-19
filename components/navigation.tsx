@@ -7,16 +7,18 @@ export default function Navigation() {
     const path = usePathname();
 
     return (
-        <nav className={styles.nav}>
-            <ul className={styles.list}>
-                <li>
-                    <Link href="/">MOVIE</Link> {path === '/' ? '🔥' : ''}
-                </li>
-                <li>
-                    <Link href="/series">SERIES</Link>
-                    {path === '/series' ? '🔥' : ''}
-                </li>
-            </ul>
-        </nav>
+        <div className={styles.container}>
+            <nav className={styles.nav}>
+                <ul className={styles.list}>
+                    <li>
+                        <Link href="/">MOVIE</Link> {path === '/' ? '🔥' : ''}
+                    </li>
+                    <li>
+                        <Link href="/series">SERIES</Link>
+                        {path === '/series' ? '🔥' : ''}
+                    </li>
+                </ul>
+            </nav>
+        </div>
     );
 }

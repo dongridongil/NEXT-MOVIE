@@ -1,26 +1,120 @@
-.container {
-    border: 3px solid red;
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(4px);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+}
 
+.container {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
-    width: 100%;
-    /* margin: 0 auto; */
-}
-.poster {
+    margin: 0 auto;
+    top: 150px;
+    width: 85%;
+
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
     border-radius: 20px;
-    max-width: 70%;
-    place-self: center;
+}
+
+.poster {
+    margin: 20px;
+    border-radius: 20px;
+    width: 100%;
+
+    position: relative !important;
 }
 
 .title {
+    margin-left: 100px;
+    margin-top: 20px;
     color: white;
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 700;
 }
 .info {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    gap: 20px;
+    margin: 50px;
+}
+.info p {
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.info h3 {
+    font-size: 16px;
+    margin-left: 100px;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+.info h4 {
+    font-size: 16px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.genres {
+    display: flex;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.text {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: white;
+}
+
+.text:hover {
+    background-color: rgba(11, 218, 207, 0.2);
+}
+
+.similar {
+    position: absolute;
+    bottom: 50px;
+
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 1200px;
+    height: auto; /* height를 auto로 설정하여 콘텐츠에 맞게 조정 */
+
+    justify-content: center; /* 필요에 따라 정렬 설정 */
+    align-items: center; /* 필요에 따라 정렬 설정 */
+}
+
+.cast {
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cast span {
+    margin: 0;
+    padding: 0;
+}
+.cast p {
+    margin: 15px;
+    padding: 0;
 }
