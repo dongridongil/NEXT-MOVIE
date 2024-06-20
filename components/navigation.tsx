@@ -8,6 +8,9 @@ export default function Navigation() {
 
     return (
         <div className={styles.container}>
+            <Link href="/">
+                <img src="/kdi3.png"></img>
+            </Link>
             <nav className={styles.nav}>
                 <ul className={styles.list}>
                     <li>

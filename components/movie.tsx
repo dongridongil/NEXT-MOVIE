@@ -56,19 +56,21 @@ const Movie = ({ movies }: IMovieProps) => {
                     disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
                 }}
             >
-                {movies.map((movie) => (
-                    <SwiperSlide className={styles.swiperContainer} key={movie.id}>
-                        <img
-                            className={styles.poster}
-                            src={makeImagePath(movie.backdrop_path)}
-                            alt={movie.title}
-                            onClick={() => onClick(movie.id)}
-                        />
-                        <h2 className={styles.h2}>{movie.title}</h2>
-                        <p className={styles.release}>개봉일 : {movie.release_date}</p>
-                        <Link prefetch href={`/movies/${movie.id}`}></Link>
-                    </SwiperSlide>
-                ))}
+                {movies
+                    .filter((movie) => movie.backdrop_path)
+                    .map((movie) => (
+                        <SwiperSlide className={styles.swiperContainer} key={movie.id}>
+                            <img
+                                className={styles.poster}
+                                src={makeImagePath(movie.backdrop_path)}
+                                alt={movie.title}
+                                onClick={() => onClick(movie.id)}
+                            />
+                            <h2 className={styles.h2}>{movie.title}</h2>
+                            <p className={styles.release}>개봉일 : {movie.release_date}</p>
+                            <Link prefetch href={`/movies/${movie.id}`}></Link>
+                        </SwiperSlide>
+                    ))}
             </Swiper>
         </div>
     );

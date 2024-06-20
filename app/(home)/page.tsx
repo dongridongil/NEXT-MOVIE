@@ -1,4 +1,3 @@
-import styles from '../../styles/home.module.css';
 import Movie from '../../components/movie';
 import { API_KEY, API_URL, BASE_PATH } from '../constants';
 
@@ -12,7 +11,13 @@ async function getMovies() {
 
     return json.results;
 }
+
 export default async function HomePage() {
     const movies = await getMovies();
-    return <Movie movies={movies} />;
+
+    return (
+        <>
+            <Movie movies={movies} />
+        </>
+    );
 }
