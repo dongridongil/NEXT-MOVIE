@@ -27,32 +27,36 @@ export default async function SeriesInfo({ id }: { id: string }) {
                 <img
                     sizes="500px"
                     className={styles.poster}
-                    src={makeImagePath(Series.poster_path)}
+                    src={Series.poster_path ? makeImagePath(Series.poster_path) : '/noData.png'}
                     alt={Series.title}
                 ></img>
 
                 <div className={styles.info}>
                     <h1 className={styles.title}>{Series.name}</h1>
                     {Series.tagline ? <h4>" {Series.tagline} "</h4> : null}
-                    <div className={styles.genres}>
-                        {Series.genres.map((gen) => (
-                            <div className={styles.text} key={gen.id}>
-                                {gen.name}
-                            </div>
-                        ))}
-                    </div>
+                    {Series.genres && Series.genres.length > 0 && (
+                        <div className={styles.genres}>
+                            {Series.genres.map((gen) => (
+                                <div className={styles.text} key={gen.id}>
+                                    {gen.name}
+                                </div>
+                            ))}
+                        </div>
+                    )}
                     <h3>
-                        ⭐{Series.vote_average.toFixed(1)}점 ◼ 방영일 {Series.last_air_date} ◼ {Series.episode_run_time}
-                        분
+                        ⭐{Series.vote_average ? Series.vote_average.toFixed(1) : 0}점 ◼ 방영일 {Series.last_air_date} ◼{' '}
+                        {Series.episode_run_time}분
                     </h3>
                     <p>{Series.overview}</p>
-                    <div className={styles.cast}>
-                        <span>출연</span>
-                        {Series.credits.cast.slice(0, 3).map((cast) => (
-                            <p key={cast.id}> {cast.name}</p>
-                        ))}{' '}
-                        {Series.credits.cast.length > 3 && <p key="more">•••</p>}
-                    </div>
+                    {Series.credits && Series.credits.cast && Series.credits.cast.length > 0 && (
+                        <div className={styles.cast}>
+                            <span>출연</span>
+                            {Series.credits.cast.slice(0, 3).map((cast) => (
+                                <p key={cast.id}> {cast.name}</p>
+                            ))}
+                            {Series.credits.cast.length > 3 && <p key="more">•••</p>}
+                        </div>
+                    )}
                     <div className={styles.similar}>
                         <SeriesSimilar id={id} />
                     </div>

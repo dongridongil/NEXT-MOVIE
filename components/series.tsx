@@ -3,11 +3,11 @@
 //swiper 라이브러리
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
-import { Navigation, Pagination, EffectCoverflow ,Autoplay  } from 'swiper/modules';
+import { Navigation, Pagination, EffectCoverflow, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-SwiperCore.use([Navigation, Pagination, EffectCoverflow ,Autoplay]);
+SwiperCore.use([Navigation, Pagination, EffectCoverflow, Autoplay]);
 
 import Link from 'next/link';
 import styles from '../styles/series.module.css';
