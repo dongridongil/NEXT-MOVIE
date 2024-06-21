@@ -36,19 +36,21 @@ const MovieSimilar = async ({ id }: { id: string }) => {
                 initialSlide={3}
                 className={styles.swiperContainer}
             >
-                {movieSimilar.map((similar) => (
-                    <SwiperSlide key={similar.id}>
-                        <Link href={`/movies/${similar.id}`}>
-                            <img
-                                key={similar.id}
-                                className={styles.poster}
-                                src={similar.poster_path}
-                                alt={similar.title}
-                            />
-                            <h2>{similar.title}</h2>
-                        </Link>
-                    </SwiperSlide>
-                ))}
+                {movieSimilar
+                    .filter((item) => item.poster_path)
+                    .map((similar) => (
+                        <SwiperSlide key={similar.id}>
+                            <Link href={`/movies/${similar.id}`}>
+                                <img
+                                    key={similar.id}
+                                    className={styles.poster}
+                                    src={similar.poster_path}
+                                    alt={similar.title}
+                                />
+                                <h2>{similar.title}</h2>
+                            </Link>
+                        </SwiperSlide>
+                    ))}
             </Swiper>
         </>
     );

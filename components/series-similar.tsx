@@ -36,7 +36,7 @@ const SeriesSimilar = async ({ id }: { id: string }) => {
                 initialSlide={3}
                 className={styles.swiperContainer}
             >
-                {SeriesSimilar.map((similar) => (
+                {SeriesSimilar.filter((item) => item.poster_path).map((similar) => (
                     <SwiperSlide key={similar.id}>
                         <Link href={`/series/${similar.id}`}>
                             <img
