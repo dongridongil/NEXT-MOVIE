@@ -7,7 +7,7 @@ export const metadata = {
 
 async function getSeries() {
     // const response = await fetch(`${BASE_PATH}/trending/tv/day?api_key=${API_KEY}&language=ko-KO&region=KR`);
-    const response = await fetch(`${BASE_PATH}/tv/popular?api_key=${API_KEY}&language=ko-KO&region=KR`);
+    const response = await fetch(`${BASE_PATH}/trending/tv/week?api_key=${API_KEY}&language=ko-KO&region=KR`);
     const json = await response.json();
 
     return json.results;

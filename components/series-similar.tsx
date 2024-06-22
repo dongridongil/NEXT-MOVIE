@@ -1,6 +1,6 @@
 'use client';
 
-import { API_URL } from '../app/constants';
+import { API_URL, BASE_PATH, makeImagePath, options } from '../app/constants';
 import styles from '../styles/movie-similar.module.css';
 //swiper 라이브러리
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,9 +14,9 @@ import Link from 'next/link';
 SwiperCore.use([Navigation, Pagination]);
 
 async function getSeriesSimilar(id: string) {
-    const response = await fetch(`${API_URL}/${id}/similar`);
-    const json = await response.json();
-    return json;
+    const response = await fetch(`${BASE_PATH}/tv/${id}/similar?language=ko&region=KR`, options);
+    const { results } = await response.json();
+    return results;
 }
 
 const SeriesSimilar = async ({ id }: { id: string }) => {
@@ -42,7 +42,7 @@ const SeriesSimilar = async ({ id }: { id: string }) => {
                             <img
                                 key={similar.id}
                                 className={styles.poster}
-                                src={similar.poster_path}
+                                src={makeImagePath(similar.poster_path)}
                                 alt={similar.title}
                             />
                             <h2>{similar.title}</h2>
