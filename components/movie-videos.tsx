@@ -1,13 +1,30 @@
-import { API_URL } from '../app/constants';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { API_URL, BASE_PATH, options } from '../app/constants';
 import styles from '../styles/movie-videos.module.css';
+
 async function getVideos(id: string) {
-    const response = await fetch(`${API_URL}/${id}/videos`);
-    const json = await response.json();
-    return json;
+    const response = await fetch(`${BASE_PATH}/movie/${id}/videos?language=ko`, options);
+    const { results } = await response.json();
+
+    return results;
 }
 
-export default async function MovieVideo({ id }: { id: string }) {
-    const videos = await getVideos(id);
+const MovieVideo = ({ id }: { id: string }) => {
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await getVideos(id);
+            setVideos(response);
+        };
+        fetchData();
+    }, []);
+
+    if (videos.length === 0) {
+        return <div className={styles.text}> 관련 데이터가 없습니다. </div>;
+    }
 
     return (
         <div className={styles.container}>
@@ -22,4 +39,6 @@ export default async function MovieVideo({ id }: { id: string }) {
             ))}
         </div>
     );
-}
+};
+
+export default MovieVideo;

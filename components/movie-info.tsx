@@ -1,6 +1,8 @@
 import { API_KEY, API_URL, BASE_PATH, makeImagePath } from '../app/constants';
 import styles from '../styles/movie-info.module.css';
+import MovieModal from './movie-modal';
 import MovieSimilar from './movie-similar';
+import { FaPlayCircle } from 'react-icons/fa';
 
 export async function getMovie(id: string) {
     // const response = await fetch(`${API_URL}/${id}`);
@@ -10,7 +12,7 @@ export async function getMovie(id: string) {
     const json = await response.json();
     return json;
 }
-export default async function MovieInfo({ id }: { id: string }) {
+const MovieInfo = async ({ id }: { id: string }) => {
     const movie = await getMovie(id);
 
     return (
@@ -44,7 +46,7 @@ export default async function MovieInfo({ id }: { id: string }) {
                     <h3>
                         ⭐{movie.vote_average.toFixed(1)}점 ◼ {movie.release_date} ◼ {movie.runtime}분
                     </h3>
-                    <p>{movie.overview}</p>
+                    <p>{movie.overview.length > 300 ? `${movie.overview.slice(0, 300)}...` : movie.overview}</p>
                     <div className={styles.cast}>
                         <span>출연</span>
                         {movie.credits.cast.slice(0, 3).map((cast) => (
@@ -52,6 +54,10 @@ export default async function MovieInfo({ id }: { id: string }) {
                         ))}{' '}
                         {movie.credits.cast.length > 3 && <p key="more">•••</p>}
                     </div>
+                    <div className={styles.play}>
+                        <MovieModal id={id} />
+                    </div>
+
                     <div className={styles.similar}>
                         <MovieSimilar id={id} />
                     </div>
@@ -59,4 +65,6 @@ export default async function MovieInfo({ id }: { id: string }) {
             </div>
         </>
     );
-}
+};
+
+export default MovieInfo;

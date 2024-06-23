@@ -1,0 +1,72 @@
+.modalOverlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1; /* Ensure the overlay covers everything else */
+}
+
+.modalContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    position: absolute;
+    top: -200px;
+    right: 300px;
+    background-color: black;
+    padding: 20px;
+
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+    z-index: 1001;
+}
+.video {
+    width: 100%;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.play {
+    font-size: 40px;
+    font-weight: 700;
+    width: 180px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    gap: 8px;
+    z-index: 100;
+}
+.play:hover {
+    opacity: 0.8;
+}
