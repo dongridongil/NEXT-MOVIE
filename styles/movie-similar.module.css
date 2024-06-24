@@ -25,6 +25,7 @@
     position: relative;
     z-index: 1;
     border-radius: 10px;
+
     border: 1px solid gray;
     width: 200px;
     height: 300px;
@@ -61,4 +62,40 @@
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
     z-index: 2;
+}
+
+/* 반응형 디자인 적용 */
+@media (max-width: 1200px) {
+    .poster {
+        width: 180px;
+        height: 270px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .poster {
+        width: 160px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .poster {
+        width: 140px;
+        height: 210px;
+    }
+}
+
+@media (max-width: 600px) {
+    .poster {
+        width: 120px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .poster {
+        width: 100px;
+        height: 150px;
+    }
 }
