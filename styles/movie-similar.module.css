@@ -8,7 +8,6 @@
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 1;
-    border: 3px solid red;
 }
 .link {
     color: rgb(178, 177, 177);
