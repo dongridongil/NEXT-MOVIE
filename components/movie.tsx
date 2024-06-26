@@ -55,20 +55,33 @@ const Movie = ({ movies }: IMovieProps) => {
                     delay: 3000,
                     disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
                 }}
+                breakpoints={{
+                    300: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    1000: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                }}
             >
                 {movies
                     .filter((movie) => movie.backdrop_path)
                     .map((movie) => (
                         <SwiperSlide className={styles.swiperContainer} key={movie.id}>
-                            <img
-                                className={styles.poster}
-                                src={makeImagePath(movie.backdrop_path)}
-                                alt={movie.title}
-                                onClick={() => onClick(movie.id)}
-                            />
-                            <h2 className={styles.h2}>{movie.title}</h2>
-                            <p className={styles.release}>개봉일 : {movie.release_date}</p>
-                            <Link prefetch href={`/movies/${movie.id}`}></Link>
+                            <Link prefetch href={`/movies/${movie.id}`}>
+                                <img
+                                    className={styles.poster}
+                                    src={makeImagePath(movie.backdrop_path)}
+                                    alt={movie.title}
+                                    onClick={() => onClick(movie.id)}
+                                />
+                                <div className={styles.desc}>
+                                    <h2 className={styles.h2}>{movie.title}</h2>
+                                    <p className={styles.release}>개봉일 : {movie.release_date}</p>
+                                </div>
+                            </Link>
                         </SwiperSlide>
                     ))}
             </Swiper>
