@@ -41,7 +41,8 @@ const Movie = ({ movies }: IMovieProps) => {
                 centerInsufficientSlides={true} // 슬라이드 수가 slidesPerView보다 적을 경우에도 슬라이드가 중앙에 배치
                 navigation // 슬라이더 prev,next
                 pagination={{ clickable: true }}
-                initialSlide={1}
+                initialSlide={4} //시작 부분
+                loop={true} // 무한 반복
                 className={styles.swiperContainer}
                 effect="coverflow"
                 coverflowEffect={{

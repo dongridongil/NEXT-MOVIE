@@ -26,12 +26,7 @@ const MovieInfo = async ({ id }: { id: string }) => {
                 }}
             ></div>
             <div className={styles.container}>
-                <img
-                    sizes="500px"
-                    className={styles.poster}
-                    src={makeImagePath(movie.poster_path)}
-                    alt={movie.title}
-                ></img>
+                <img sizes="500px" className={styles.poster} src={makeImagePath(movie.poster_path)} alt={movie.title} />
 
                 <div className={styles.info}>
                     <h1 className={styles.title}>{movie.title}</h1>

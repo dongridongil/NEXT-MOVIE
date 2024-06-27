@@ -12,31 +12,30 @@ async function getVideos(id: string) {
 }
 
 const MovieVideo = ({ id }: { id: string }) => {
-    const [videos, setVideos] = useState([]);
+    const [videoKey, setVideoKey] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await getVideos(id);
-            setVideos(response);
+            if (response.length > 0) {
+                setVideoKey(response[0].key);
+            }
         };
         fetchData();
-    }, []);
+    }, [id]);
 
-    if (videos.length === 0) {
+    if (!videoKey) {
         return <div className={styles.text}> 관련 데이터가 없습니다. </div>;
     }
 
     return (
         <div className={styles.container}>
-            {videos.map((video) => (
-                <iframe
-                    key={video.id}
-                    src={`https://youtube.com/embed/${video.key}`}
-                    title={video.name}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                />
-            ))}
+            <iframe
+                src={`https://youtube.com/embed/${videoKey}`}
+                title="Movie Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            />
         </div>
     );
 };

@@ -21,14 +21,12 @@
     right: 30px;
     font-size: 48px;
     font-weight: 700;
-    z-index: 1;
 }
 .release {
     position: relative;
     bottom: 30px;
     right: 32px;
     font-size: 22px;
-    z-index: 1;
 }
 
 .poster {

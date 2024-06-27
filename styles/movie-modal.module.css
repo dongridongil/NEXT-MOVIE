@@ -1,15 +1,17 @@
 .modalOverlay {
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: black;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    /* background-color: black; */
+    opacity: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    z-index: 1; /* Ensure the overlay covers everything else */
+    z-index: 1000;
 }
 
 .modalContent {
@@ -17,21 +19,18 @@
     justify-content: center;
     align-items: center;
     border: 1px solid gray;
-    position: absolute;
-    top: -200px;
-    right: 300px;
+    position: fixed;
     background-color: black;
-    padding: 20px;
-
-    width: 600px;
-    height: 400px;
+    opacity: 1;
+    padding: 50px;
+    width: 400px;
+    height: 300px;
     border-radius: 10px;
-
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-    z-index: 1001;
+    z-index: 1010;
 }
 .video {
+    background-color: black;
     width: 100%;
 }
 
@@ -65,8 +64,15 @@
     transition: transform 0.3s ease-in-out;
     position: relative;
     gap: 8px;
-    z-index: 100;
 }
 .play:hover {
     opacity: 0.8;
+}
+
+@media (min-width: 0) and (max-width: 1024px) {
+    .modalContent {
+        padding: 50px;
+        width: 280px;
+        height: 200px;
+    }
 }
