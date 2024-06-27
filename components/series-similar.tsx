@@ -1,7 +1,7 @@
 'use client';
 
 import { API_URL, BASE_PATH, makeImagePath, options } from '../app/constants';
-import styles from '../styles/movie-similar.module.css';
+import styles from '../styles/series.similar.module.css';
 //swiper 라이브러리
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
@@ -39,13 +39,12 @@ const SeriesSimilar = async ({ id }: { id: string }) => {
                 {SeriesSimilar.filter((item) => item.poster_path).map((similar) => (
                     <SwiperSlide key={similar.id}>
                         <Link href={`/series/${similar.id}`}>
-                            <img
-                                key={similar.id}
-                                className={styles.poster}
-                                src={makeImagePath(similar.poster_path)}
-                                alt={similar.title}
-                            />
-                            <h2>{similar.title}</h2>
+                            <div className={styles.poster}>
+                                <img src={makeImagePath(similar.poster_path)} alt={similar.title} />
+                                <div className={styles.h2}>
+                                    <h2>{similar.name}</h2>
+                                </div>
+                            </div>
                         </Link>
                     </SwiperSlide>
                 ))}

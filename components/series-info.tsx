@@ -1,5 +1,6 @@
 import { API_KEY, API_URL, BASE_PATH, makeImagePath } from '../app/constants';
 import styles from '../styles/series-info.module.css';
+import SeriesModal from './series-modal';
 import SeriesSimilar from './series-similar';
 
 export async function getSeries(id: string) {
@@ -57,6 +58,9 @@ export default async function SeriesInfo({ id }: { id: string }) {
                             {Series.credits.cast.length > 3 && <p key="more">•••</p>}
                         </div>
                     )}
+                    <div className={styles.play}>
+                        <SeriesModal id={id} />
+                    </div>
                     <div className={styles.similar}>
                         <SeriesSimilar id={id} />
                     </div>

@@ -6,11 +6,12 @@
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
-    z-index: -1;
+
     top: 0;
     left: 0;
     position: absolute;
     object-fit: cover;
+    z-index: 0;
 }
 
 .container {
@@ -21,19 +22,21 @@
     margin: 0 auto;
     top: 150px;
     width: 85%;
-
+    /* padding: 30px; */
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.7);
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+
     border-radius: 20px;
+    overflow-y: hidden;
+    z-index: 0;
 }
 
 .poster {
     margin: 20px;
     border-radius: 20px;
     width: 100%;
-
-    position: relative !important;
+    height: fit-content !important;
+    position: relative;
 }
 
 .title {
@@ -46,14 +49,20 @@
 .info {
     display: flex;
     flex-direction: column;
+
     margin-top: 20px;
     margin: 50px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
 .info p {
     font-size: 20px;
     margin-left: 100px;
     margin-top: 20px;
-    line-height: 1.5;
+
+    letter-spacing: 2px;
+    line-height: 20px;
 }
 
 .info h3 {
@@ -87,17 +96,18 @@
 }
 
 .similar {
-    position: absolute;
-    bottom: 100px;
-
+    position: relative;
+    width: 100%;
     font-size: 20px;
     margin-left: 100px;
     margin-top: 50px;
-    width: 1200px;
-    height: auto; /* height를 auto로 설정하여 콘텐츠에 맞게 조정 */
+    max-width: 1200px;
+    height: auto;
 
-    justify-content: center; /* 필요에 따라 정렬 설정 */
-    align-items: center; /* 필요에 따라 정렬 설정 */
+    justify-content: center;
+
+    align-items: center;
+    z-index: 0;
 }
 
 .cast {
@@ -117,4 +127,61 @@
 .cast p {
     margin: 15px;
     padding: 0;
+}
+
+.play {
+    margin-left: 100px;
+    margin-top: 20px;
+    width: 180px;
+    height: 60px;
+    z-index: 1;
+}
+.play h3 {
+    margin: 0;
+    color: black;
+    font-size: 24px; /* 텍스트 크기를 조정하여 중앙 정렬을 쉽게 합니다 */
+}
+.play:hover {
+    opacity: 0.8;
+}
+
+/* 반응형 디자인 적용 */
+
+@media (min-width: 0) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr; /* 단일 열로 변경 */
+        gap: 20px;
+        margin-top: -40px;
+        width: 90%;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .poster {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .title {
+        font-size: 30px;
+        margin-left: 0;
+    }
+
+    .info {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .info p,
+    .info h3,
+    .info h4,
+    .genres,
+    .play,
+    .similar,
+    .text,
+    .cast {
+        font-size: 18px;
+        margin-left: 0;
+    }
 }
