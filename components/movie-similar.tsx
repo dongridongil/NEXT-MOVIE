@@ -5,13 +5,13 @@ import styles from '../styles/movie-similar.module.css';
 //swiper 라이브러리
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Link from 'next/link';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 async function getMovieSimilar(id: string) {
     const response = await fetch(`${API_URL}/${id}/similar`);
@@ -35,6 +35,10 @@ const MovieSimilar = async ({ id }: { id: string }) => {
                 pagination={{ clickable: true }}
                 initialSlide={3}
                 className={styles.swiperContainer}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
+                }}
             >
                 {movieSimilar
                     .filter((item) => item.poster_path)
