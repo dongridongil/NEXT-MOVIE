@@ -102,6 +102,7 @@
     margin-left: 100px;
     margin-top: auto;
     max-width: 1100px;
+
     height: auto;
     justify-content: center;
     align-items: center;
@@ -182,5 +183,8 @@
     .cast {
         font-size: 18px;
         margin-left: 0;
+    }
+    .play {
+        margin-bottom: 20px;
     }
 }

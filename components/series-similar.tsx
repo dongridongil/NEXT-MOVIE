@@ -24,7 +24,7 @@ const SeriesSimilar = async ({ id }: { id: string }) => {
 
     return (
         <>
-            <div className={styles.title}>비슷한 영화</div>
+            <div className={styles.title}>비슷한 시리즈</div>
 
             <Swiper
                 spaceBetween={20} // 슬라이더 간격
