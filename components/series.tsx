@@ -41,7 +41,8 @@ const Series = ({ series }: ISeriesProps) => {
                 centerInsufficientSlides={true} // 슬라이드 수가 slidesPerView보다 적을 경우에도 슬라이드가 중앙에 배치
                 navigation // 슬라이더 prev,next
                 pagination={{ clickable: true }}
-                initialSlide={1}
+                initialSlide={4} //시작 부분
+                loop={true} // 무한 반복
                 className={styles.swiperContainer}
                 effect="coverflow"
                 coverflowEffect={{
@@ -55,18 +56,31 @@ const Series = ({ series }: ISeriesProps) => {
                     delay: 3000,
                     disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
                 }}
+                breakpoints={{
+                    300: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    1000: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                }}
             >
                 {series.map((tv) => (
                     <SwiperSlide className={styles.swiperContainer} key={tv.id}>
-                        <img
-                            className={styles.poster}
-                            src={makeImagePath(tv.backdrop_path)}
-                            alt={tv.name}
-                            onClick={() => onClick(tv.id)}
-                        />
-                        <h2 className={styles.h2}>{tv.name}</h2>
-                        <p className={styles.release}>첫 방송 : {tv.first_air_date}</p>
-                        <Link prefetch href={`/tvs/${tv.id}`}></Link>
+                        <Link prefetch href={`/series/${tv.id}`}>
+                            <img
+                                className={styles.poster}
+                                src={makeImagePath(tv.backdrop_path)}
+                                alt={tv.name}
+                                onClick={() => onClick(tv.id)}
+                            />
+                            <div className={styles.desc}>
+                                <h2 className={styles.h2}>{tv.name}</h2>
+                                <p className={styles.release}>첫 방송 : {tv.first_air_date}</p>
+                            </div>
+                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>
