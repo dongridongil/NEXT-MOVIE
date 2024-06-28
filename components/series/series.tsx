@@ -10,9 +10,9 @@ import 'swiper/css/navigation';
 SwiperCore.use([Navigation, Pagination, EffectCoverflow, Autoplay]);
 
 import Link from 'next/link';
-import styles from '../styles/series.module.css';
+import styles from '../../styles/series/series.module.css';
 import { useRouter } from 'next/navigation';
-import { makeImagePath } from '../app/constants';
+import { makeImagePath } from '../../app/constants';
 
 interface ISeries {
     id: string;

@@ -10,9 +10,9 @@ import 'swiper/css/navigation';
 SwiperCore.use([Navigation, Pagination, EffectCoverflow, Autoplay]);
 
 import Link from 'next/link';
-import styles from '../styles/movie.module.css';
+import styles from '../../styles/movie/movie.module.css';
 import { useRouter } from 'next/navigation';
-import { makeImagePath } from '../app/constants';
+import { makeImagePath } from '../../app/constants';
 
 interface IMovie {
     id: string;

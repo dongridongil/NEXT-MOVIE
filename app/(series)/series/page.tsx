@@ -1,5 +1,5 @@
 import { API_KEY, API_URL, BASE_PATH } from '../../constants';
-import Series from '../../../components/series';
+import Series from '../../../components/series/series';
 
 export const metadata = {
     title: 'Home',

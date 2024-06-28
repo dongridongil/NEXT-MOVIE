@@ -1,5 +1,5 @@
-import { API_KEY, API_URL, BASE_PATH, makeImagePath } from '../app/constants';
-import styles from '../styles/movie-info.module.css';
+import { API_KEY, API_URL, BASE_PATH, makeImagePath } from '../../app/constants';
+import styles from '../../styles/movie/movie-info.module.css';
 import MovieModal from './movie-modal';
 import MovieSimilar from './movie-similar';
 import { FaPlayCircle } from 'react-icons/fa';

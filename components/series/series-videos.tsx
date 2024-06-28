@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { API_URL, BASE_PATH, options } from '../app/constants';
-import styles from '../styles/movie-videos.module.css';
+import { API_URL, BASE_PATH, options } from '../../app/constants';
+import styles from '../../styles/movie/movie-videos.module.css';
 
 async function getVideos(id: string) {
     const response = await fetch(`${BASE_PATH}/tv/${id}/videos?language=ko`, options);

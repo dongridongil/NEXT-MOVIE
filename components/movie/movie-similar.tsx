@@ -1,7 +1,7 @@
 'use client';
 
-import { API_URL } from '../app/constants';
-import styles from '../styles/movie-similar.module.css';
+import { API_URL } from '../../app/constants';
+import styles from '../../styles/movie/movie-similar.module.css';
 //swiper 라이브러리
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';

@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import SeriesInfo, { getSeries } from '../../../../components/series-info';
+import SeriesInfo, { getSeries } from '../../../../components/series/series-info';
 
 interface IParams {
     params: { id: string };

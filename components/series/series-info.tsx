@@ -1,5 +1,5 @@
-import { API_KEY, API_URL, BASE_PATH, makeImagePath } from '../app/constants';
-import styles from '../styles/series-info.module.css';
+import { API_KEY, API_URL, BASE_PATH, makeImagePath } from '../../app/constants';
+import styles from '../../styles/series/series-info.module.css';
 import SeriesModal from './series-modal';
 import SeriesSimilar from './series-similar';
 

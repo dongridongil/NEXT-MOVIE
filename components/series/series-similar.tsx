@@ -1,7 +1,7 @@
 'use client';
 
-import { API_URL, BASE_PATH, makeImagePath, options } from '../app/constants';
-import styles from '../styles/series.similar.module.css';
+import { API_URL, BASE_PATH, makeImagePath, options } from '../../app/constants';
+import styles from '../../styles/series/series.similar.module.css';
 //swiper 라이브러리
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';

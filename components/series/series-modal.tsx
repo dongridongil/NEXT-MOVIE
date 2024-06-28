@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { FaPlayCircle } from 'react-icons/fa';
-import MovieVideo from './movie-videos';
-import styles from '../styles/movie-modal.module.css';
+import SeriesVideo from './series-videos';
+import styles from '../../styles/movie/movie-modal.module.css';
 import ReactDOM from 'react-dom';
 
 const MovieModal = ({ id }) => {
@@ -34,7 +34,7 @@ const MovieModal = ({ id }) => {
                     &times;
                 </div>
                 <div className={styles.video}>
-                    <MovieVideo id={id} />
+                    <SeriesVideo id={id} />
                 </div>
             </div>
         </div>,
