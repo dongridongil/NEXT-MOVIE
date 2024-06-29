@@ -6,6 +6,7 @@ import { FaPlayCircle } from 'react-icons/fa';
 
 export async function getMovie(id: string) {
     // const response = await fetch(`${API_URL}/${id}`);
+
     const response = await fetch(
         `${BASE_PATH}/movie/${id}?append_to_response=credits&api_key=${API_KEY}&language=ko-KO&region=KR`
     );

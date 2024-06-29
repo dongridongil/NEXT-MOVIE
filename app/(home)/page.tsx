@@ -1,5 +1,7 @@
+import { Suspense } from 'react';
 import Movie from '../../components/movie/movie';
 import { API_KEY, API_URL, BASE_PATH } from '../constants';
+import Loading from './loading';
 
 export const metadata = {
     title: 'Home',
@@ -17,7 +19,9 @@ export default async function HomePage() {
 
     return (
         <>
-            <Movie movies={movies} />
+            <Suspense fallback={<Loading />}>
+                <Movie movies={movies} />
+            </Suspense>
         </>
     );
 }
