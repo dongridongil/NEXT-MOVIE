@@ -34,14 +34,14 @@
     text-align: center;
 }
 .poster:hover > img {
-    opacity: 0.4; /* 포스터 이미지에만 opacity 적용 */
+    opacity: 0.4;
     transition: opacity 0.3s ease-in-out;
 }
 
 .poster img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지가 잘리지 않고 비율을 유지하도록 설정 */
+    object-fit: cover;
 }
 .poster:hover .h2 {
     opacity: 1;
