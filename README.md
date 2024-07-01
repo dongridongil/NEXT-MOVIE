@@ -27,6 +27,8 @@
 ![image](https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/a12e2b87-35cc-42fd-ba79-d15ff6265c17)
 
 
-# 반응형 info
+# 모바일
+![image](https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/47fae427-9c77-44d9-961a-338dd75c13a3)
 
-![image](https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/54558ea7-989d-4f8b-9efc-c2d32b96cc2b)
+![image](https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/d25ac305-c4a8-46d0-9769-ee30ca39609e)
+
