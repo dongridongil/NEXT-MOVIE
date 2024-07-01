@@ -28,6 +28,8 @@
 
 
 # 모바일
+
+<img src="https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/47fae427-9c77-44d9-961a-338dd75c13a3"  width="400" height="600" />
 ![image](https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/47fae427-9c77-44d9-961a-338dd75c13a3)
 
 ![image](https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/d25ac305-c4a8-46d0-9769-ee30ca39609e)
